@@ -6,7 +6,7 @@ CMD ["node", "app.js"]
 
 
 
-### CRIANDO A IMAGEM DO NODEJS ###
+### CRIANDO A IMAGEM DO NODEJS USANDO O DOCKERFILE ###
 # docker build -t node:curso .
 
 ### CRIANDO O CONTAINER ###
