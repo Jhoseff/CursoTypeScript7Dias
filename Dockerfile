@@ -1,20 +1,29 @@
 FROM node:24-alpine
+
 WORKDIR /app
+
+RUN npm i -g typescript
+
 COPY . .
+
 EXPOSE 3000
+
 CMD ["node", "app.js"]
 
 
-
-### CRIANDO A IMAGEM DO NODEJS USANDO O DOCKERFILE ###
+### COMPILANDO A IMAGEM DO NODEJS USANDO O DOCKERFILE ###
 # docker build -t node:curso .
 
-### CRIANDO O CONTAINER ###
+### CRIANDO O CONTAINER E EXECUTANDO ###
 # docker run -dp 3000:3000 --name node node:curso
+
+### CRIANDO O CONTAINER EM MODO INTERATIVO ###
+# docker run -it -p 3000:3000 --name node-interativo node:curso sh
 
 #docker start node >>> Inicia o container
 #docker stop node >>> Para o container
 #docker rm node >>> Remove o container
+
 #docker images >>> Lista as imagens criadas
 #docker ps >>> Lista os containers em execução
 #docker ps -a >>> Lista todos os containers, inclusive os que não estão em execução
