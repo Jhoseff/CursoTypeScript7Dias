@@ -18,7 +18,7 @@ CMD ["node", "app.js"]
 # docker run -dp 3000:3000 --name node node:curso
 
 ### CRIANDO O CONTAINER EM MODO INTERATIVO ###
-# docker run -it -p 3000:3000 --name node-interativo node:curso sh
+# docker run -it -p 3000:3000 --name node node:curso sh
 
 #docker start node >>> Inicia o container
 #docker stop node >>> Para o container
