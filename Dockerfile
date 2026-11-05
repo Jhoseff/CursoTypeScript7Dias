@@ -6,10 +6,17 @@ RUN npm i -g typescript
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3000 
 
-CMD ["node", "app.js"]
+#executa o arquivo app.js no servidor node criado
+# CMD ["node", "app.js"]
 
+# Deixamos o container rodando em segundore plano esperando instruções
+CMD ["tail", "-f", "/dev/null"]
+
+########################################################################################
+# FIM DO DOCKERFILE
+########################################################################################
 
 ### COMPILANDO A IMAGEM DO NODEJS USANDO O DOCKERFILE ###
 # docker build -t node:curso .
@@ -17,19 +24,22 @@ CMD ["node", "app.js"]
 ### CRIANDO O CONTAINER E EXECUTANDO ###
 # docker run -dp 3000:3000 --name node node:curso
 
+### CRIANDO O CONTAINER E EXECUTANDO mapeando o volume ${PWD} caminho onde está executando os comandos   ###
+# docker run -dit --name node -v ${PWD}:/app -w /app -p 3000:3000 node:curso
+
 ### CRIANDO O CONTAINER EM MODO INTERATIVO ###
 # docker run -it -p 3000:3000 --name node node:curso sh
 
 #docker start node >>> Inicia o container
 #docker stop node >>> Para o container
 #docker rm node >>> Remove o container
+#docker exec -it node sh >>> Acessa o container
+#docker exec -it node sh -c "ls" >>> Executa o comando ls dentro do container
 
 #docker images >>> Lista as imagens criadas
 #docker ps >>> Lista os containers em execução
 #docker ps -a >>> Lista todos os containers, inclusive os que não estão em execução
 #docker logs node >>> Mostra os logs do container
-#docker exec -it node sh >>> Acessa o container
-#docker exec -it node sh -c "ls" >>> Executa o comando ls dentro do container
 
 
 ### SEM O DOCKERFILE ###
