@@ -1,6 +1,7 @@
 "use strict";
 //AULA 13
 //console.log('Hi Jhoseff Thiago!')
+Object.defineProperty(exports, "__esModule", { value: true });
 //AULA 14
 //let a = 10
 //let b = "Jhoseff"

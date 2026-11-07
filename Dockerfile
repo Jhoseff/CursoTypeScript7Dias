@@ -19,16 +19,16 @@ CMD ["tail", "-f", "/dev/null"]
 ########################################################################################
 
 ### COMPILANDO A IMAGEM DO NODEJS USANDO O DOCKERFILE ###
-# docker build -t node:curso .
+# docker build -t node:dev .
 
 ### CRIANDO O CONTAINER E EXECUTANDO ###
-# docker run -dp 3000:3000 --name node node:curso
+# docker run -dp 3000:3000 --name node node:dev
 
 ### CRIANDO O CONTAINER E EXECUTANDO mapeando o volume ${PWD} caminho onde está executando os comandos   ###
-# docker run -dit --name node -v ${PWD}:/app -w /app -p 3000:3000 node:curso
+# docker run -dit --name node -v ${PWD}:/app -w /app -p 3000:3000 node:dev
 
 ### CRIANDO O CONTAINER EM MODO INTERATIVO ###
-# docker run -it -p 3000:3000 --name node node:curso sh
+# docker run -it -p 3000:3000 --name node node:dev sh
 
 #docker start node >>> Inicia o container
 #docker stop node >>> Para o container
