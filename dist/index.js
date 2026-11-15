@@ -1,3 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-let price = 40;
+const sequence = Array.from(Array(10).keys());
+const animals = ['pangolin', 'aardvark', 'echidna', 'binturong'];
+const stringsAndNumbers = [1, 'one', 2, 'two', 3, 'three'];
+const allMyArrays = [sequence, animals, stringsAndNumbers];
+console.log(allMyArrays);
+export {};
